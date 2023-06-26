@@ -71,13 +71,14 @@ body {
 }
 
 .Type {
-  width: 50px;
+  width: 75px;
   padding-left: 2px;
   padding-right: 2px
 }
 
 .StatSection {
   width: 100%;
+  height: 300px;
 }
 
 .row {
@@ -105,23 +106,41 @@ body {
 .column2 {
   height: 100px;
   padding-right: 50%;
+  text-align: center;
+}
+
+.column2 h3 {
+  align-items: center;
+  margin: 8px;
 }
 
 .hp {
-  color: red
+  border-radius: 10px;
+  border: 2px solid red;
+  background-color: red;
 }
 .attack {
-  color: orange
+  border-radius: 10px;
+  border: 2px solid orange;
+  background-color: orange;
 }
 .defense {
-  color: rgb(221, 244, 22)
+  border-radius: 10px;
+  border: 2px solid rgb(221, 244, 22);
+  background-color: rgb(221, 244, 22);
 }
 .special-attack {
-  color: green
+  border-radius: 10px;
+  border: 2px solid green;
+  background-color: green;
 }
 .special-defense {
-  color: blue
+  border-radius: 10px;
+  border: 2px solid blue;
+  background-color: blue;
 }
 .speed {
-  color: violet
+  border-radius: 10px;
+  border: 2px solid violet;
+  background-color: violet;
 }

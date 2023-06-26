@@ -77,12 +77,12 @@ function App() {
                 <div className="row">
                   <div className="column">
                     <div className="column1">
-                      <h3>{genStatNames(pokemon.stats)}</h3>
+                      <ul>{genStatNames(pokemon.stats)}</ul>
                     </div>
                   </div>
                   <div className="column">
                     <div className="column2">
-                      <h3>{genStats(pokemon.stats)}</h3>
+                      <ul>{genStats(pokemon.stats)}</ul>
                     </div>
                   </div>
                 </div>
