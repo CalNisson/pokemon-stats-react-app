@@ -110,16 +110,16 @@ body {
 .hp {
   color: red
 }
-.atk {
+.attack {
   color: orange
 }
-.def {
+.defense {
   color: rgb(221, 244, 22)
 }
-.spatk {
+.special-attack {
   color: green
 }
-.spdef {
+.special-defense {
   color: blue
 }
 .speed {

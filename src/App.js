@@ -36,6 +36,16 @@ function App() {
     return firstLetter + restName;
   }
 
+  function genStatNames(poke_stats) {
+    const arrayItems = poke_stats.map((stat) => <h3 className={stat.stat.name}>{stat.stat.name.toUpperCase().replace("-", " ")}:</h3>);
+    return arrayItems;
+  }
+
+  function genStats(poke_stats) {
+    const arrayItems = poke_stats.map((stat) => <h3>{stat.base_stat}</h3>);
+    return arrayItems;
+  }
+
   return (
     <div className="App">
       <div className="TitleSection">
@@ -67,22 +77,12 @@ function App() {
                 <div className="row">
                   <div className="column">
                     <div className="column1">
-                      <h3 className="hp">HP:</h3>
-                      <h3 className="atk">Attack:</h3>
-                      <h3 className="def">Defense:</h3>
-                      <h3 className="spatk">Special Attack:</h3>
-                      <h3 className="spdef">Special Defense:</h3>
-                      <h3 className="speed">Speed:</h3>
+                      <h3>{genStatNames(pokemon.stats)}</h3>
                     </div>
                   </div>
                   <div className="column">
                     <div className="column2">
-                      <h3>{pokemon.stats[0].base_stat}</h3>
-                      <h3>{pokemon.stats[1].base_stat}</h3>
-                      <h3>{pokemon.stats[2].base_stat}</h3>
-                      <h3>{pokemon.stats[3].base_stat}</h3>
-                      <h3>{pokemon.stats[4].base_stat}</h3>
-                      <h3>{pokemon.stats[5].base_stat}</h3>
+                      <h3>{genStats(pokemon.stats)}</h3>
                     </div>
                   </div>
                 </div>
