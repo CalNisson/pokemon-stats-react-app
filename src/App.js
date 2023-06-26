@@ -7,6 +7,12 @@ function App() {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonChosen, setPokemonChosen] = useState(false);
   const [pokemon, setPokemon] = useState({name: "", image: "", stats: [], types: []});
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      document.getElementById("pkmnSubmit").click();
+    } 
+  }
   const searchPokemon = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(
       (response) => {
@@ -17,7 +23,10 @@ function App() {
           types: response.data.types
         });
         setPokemonChosen(true);
-    })
+    }).catch((error) => {
+      console.log("Error Response: ")
+      console.log(error);
+    });
   }
 
   function capName(pokeName) {
@@ -26,14 +35,6 @@ function App() {
     const restName = name.slice(1);
     return firstLetter + restName;
   }
-
-  var input = document.getElementById("pkmnInput");
-  input.addEventListener("keypress", function(event) {
-    if(event.key === "Enter") {
-      event.preventDefault();
-      document.getElementById("pkmnSubmit").click();
-    }
-  });
 
   return (
     <div className="App">
@@ -44,7 +45,9 @@ function App() {
           type="text" 
           onChange={(event) => {
             setPokemonName(event.target.value)
-          }}></input>
+          }}
+          onKeyDown={handleKeyDown}
+          ></input>
         <button 
           id="pkmnSubmit"
           onClick={searchPokemon}>Search Pokemon</button>
@@ -64,12 +67,12 @@ function App() {
                 <div className="row">
                   <div className="column">
                     <div className="column1">
-                      <h3 class="hp">HP:</h3>
-                      <h3 class="atk">Attack:</h3>
-                      <h3 class="def">Defense:</h3>
-                      <h3 class="spatk">Special Attack:</h3>
-                      <h3 class="spdef">Special Defense:</h3>
-                      <h3 class="speed">Speed:</h3>
+                      <h3 className="hp">HP:</h3>
+                      <h3 className="atk">Attack:</h3>
+                      <h3 className="def">Defense:</h3>
+                      <h3 className="spatk">Special Attack:</h3>
+                      <h3 className="spdef">Special Defense:</h3>
+                      <h3 className="speed">Speed:</h3>
                     </div>
                   </div>
                   <div className="column">
