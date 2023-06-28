@@ -141,11 +141,13 @@ body {
   border-radius: 10px;
   border: 2px solid green;
   background-color: green;
+  white-space: nowrap;
 }
 .special-defense {
   border-radius: 10px;
   border: 2px solid blue;
   background-color: blue;
+  white-space: nowrap;
 }
 .speed {
   border-radius: 10px;
