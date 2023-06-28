@@ -97,6 +97,12 @@ function App() {
     return arrayItems;
   }
 
+  function padNum(dexNum) {
+    let num = dexNum.toString();
+    while (num.length < 4) num = "0" + num;
+    return num;
+  }
+
   return (
     <div className="App">
       <div className="TitleSection">
@@ -118,7 +124,7 @@ function App() {
             <h1>Please choose a Pokemon</h1>
           ) : (
             <>
-              <h1>#{pokemon.dexNum} - {capName(pokemon.name.toLowerCase())}</h1>
+              <h1>#{padNum(pokemon.dexNum)} - {capName(pokemon.name.toLowerCase())}</h1>
               <img className="Pokemon" src={pokemon.img} alt="Pokemon's sprite"/>
               <div className="Types">
                 <img className="Type" src={"https://www.serebii.net/pokedex-bw/type/" + pokemon.types[0].type.name + ".gif"} alt ="Pokemon's type"/>
